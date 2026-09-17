@@ -12,34 +12,10 @@ These graphs run in a simulation; the nodes automatically move to try to present
 
 There's also a 3d mode.
 
-It does this by collecting data from:
+The script works by collecting data from:
 * Your spoiler log, 
 * OoTMM's source code
 * Your configuration file
-
-# Aknowledgements
-
-## Gravis
-Most of the spectatucular parts of this script come from the gravis library. All this script does is collect and process data then give it to gravis.
-
-## OoTMM
-Most of the data source for this script comes from (OoTMM's source code)[https://github.com/OoTMM/OoTMM/].
-
-## AI Disclosure
-
-* Overall architecture: created by a human
-* render.py's make_edges() function's most complex part was created by an AI. This is the part that collects information about edges edited by a human
-* The "disjoint set" design pattern: suggested by an AI; specialised implementation developed by humans
-* The BFS pattern: suggested by an AI, implemented by humans
-* Debugging was heavily AI assisted
-* Other basic snippets of code were asked of AI and editted/used
-
-Overall, the use of AI was light to moderate. AI never had full access to code base, only snippets were pasted into prompts. Mostly it was used in the same manner as one uses a search engine, with much of its answers verified. 
-
-Only 'free' models were used; no payments were made to AI companies.
-
-# Requirements
-python >= 3.9
 
 # Installation
 
@@ -63,16 +39,22 @@ You have two options - install requirements globally or use a virtual environmen
 
 3. Get a CLI window up and ensure you are in the project's root directory
 4. Create virtual environment:
+
 ```python -m venv venv```
 
 5. Activate virtual environment:
+
 Linux: `source venv/bin/activate`
+
 Windows: `.\venv\Scripts\activate`
 
 6. Install requirements into the virtual environment:
+
 `pip install -r requirements.txt`
 
 **When using this form of installation, the command to start the script starts with `py main.py` instead of `.\ootmm-er-plotter.exe`**
+
+You will need to ensure the virtual environment is active (see step 5) every time you run the script.
 
 # Usage
 The script is executed at the command line.
@@ -83,7 +65,7 @@ It is **highly recommended** that you edit your config file to un-ignore entranc
 
 The "./user/" folder is provided as a way for you to store files, including spoiler logs and config files. You may store these files anywhere you like, including in the project's root directory or elsewhere on the system; the user folder is provided solely as a convenience.
 
-## Execute script using the default config
+## Generate graph using config.yml
 ```.\ootmm-er-plotter.exe .\my-spoiler-log.txt```
 
 The location of the spoiler log is required.
@@ -97,7 +79,7 @@ By default, the CLI loads `.\config.yml`. An additional default config is also s
 
 Config files can be edited, copied, pasted and moved wherever you like.
 
-Documentation for the config file is found within the default files.
+Documentation for the config file is found within the supplied config files.
 
 The most important thing to configure is what entrances get ignored.
 
@@ -118,6 +100,27 @@ Some graph options available in `config.yml` do not seem to be available via the
 
 # Building
 See [BUILD.MD](BUILD.md)
+
+# Acknowledgements
+
+## Gravis
+Most of the spectatucular parts of this script come from the gravis library. All this script does is collect and process data then give it to gravis.
+
+## OoTMM
+Most of the data source for this script comes from [OoTMM's source code](https://github.com/OoTMM/OoTMM/)
+
+## AI Disclosure
+
+* Overall architecture: created by a human
+* `render.py`'s `make_edges()` function's most complex part was created by an AI. This is the part that collects information about edges that are between the same nodes.
+* The "disjoint set" design pattern: suggested by an AI; specialised implementation developed by humans
+* The BFS pattern: suggested by an AI, implemented by humans
+* Debugging was heavily AI assisted
+* Other basic snippets of code were asked of AI and editted/used
+
+Overall, the use of AI was light to moderate. AI never had full access to code base, only snippets were pasted into prompts. Mostly it was used in the same manner as one uses a search engine, with much of its answers verified. 
+
+Only 'free' models were used; no payments were made to AI companies.
 
 # Contact
 @eedefeed on [OoTMM](https://ootmm.com/) discord.

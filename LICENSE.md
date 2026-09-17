@@ -26,7 +26,7 @@ SOFTWARE.
 
 This project distributes source code/data from the OoTMM project. 
 
-OoTMM is licensed under the "MIT License", is "Copyright (c) 2020-2022 OoTMM Team", was created by was created by [Maxime Bacoux "Nax"](https://github.com/Nax) and can be found at https://github.com/OoTMM/OoTMM/
+OoTMM is licensed under the "MIT License", is "Copyright (c) 2020-2022 OoTMM Team", was created by [Maxime Bacoux "Nax"](https://github.com/Nax) and can be found at https://github.com/OoTMM/OoTMM/
  
 ## Software Embedded in Executables
 
@@ -37,4 +37,4 @@ This project embeds third-party software in its executables. These licenses for 
 | PyYAML | MIT License             | Kirill Simonov | https://pyyaml.org/                        |
 | gravis | Apache Software License | Robert Haas    | https://robert-haas.github.io/gravis-docs/ |
 
-Other projects may be embedded within these projects. Please see dependencies for individual projects.
+**Other projects may be embedded within these projects. Please see those individual projects' own dependencies**

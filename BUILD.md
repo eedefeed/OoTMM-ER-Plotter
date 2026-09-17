@@ -6,29 +6,35 @@ The two ways of using OoTMM ER Plotter are as follows:
 1. Using the executables
 2. Executing main.py with python
 
-For instructions on those methods, please see (README.md)[README.md]
+For instructions on those methods, please see [README.md](README.md)
 
 # Building executable files
 
 You may have already performed some of these steps as a user of OoTMM ER Plotter. There should be no need to repeat them.
 
 1. Create virtual environment
+
 ```python -m venv venv```
 
 2. Activate virtual environment
+
 Linux: `source venv/bin/activate`
+
 Windows: `.\venv\Scripts\activate`
 
 3. Install requirements
+
 `pip install -r requirements.txt`
 
 4. Install pyinstaller:
+
 ```pip install pyinstaller```
 
 5. Build:
+
 ```py -m PyInstaller .\main.spec```
 
-Warning: some PyInstaller commands will overwrite `.\main.spec` with a default script. If things aren't working, try checking the contents of the file have not been editted. 
+Warning: some PyInstaller commands will overwrite `.\main.spec` with a default script. If things aren't working, try checking the contents of the file have not been overwritten. 
 
 This final command builds an executable and creates a few folders and files. 
 
