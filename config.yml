@@ -1,0 +1,215 @@
+# config.yml
+
+# In a YAML file, text after a # is ignored!
+
+# These are the entrances types in entrance.yml
+# BASICALLY: uncomment any entrance types you don't want plotted on the graph.
+#      E.G: if you don't have grotto shuffle enabled, uncomment the four grotto entrance types.
+# How this works:
+#      We load OoTMM's complete logical map of the games, then we make incisions based on entrances.yml
+#      Any areas that are still connected after incisions will become one node in the graph.
+#      When you add an entrance type to ignore-entrance-types, you stop those entrances being used to make incisions.
+#      Thus if you were to ignore grottos, then grottos would still be attached to their normal places after incisions.
+#      And thus grottos don't get their own nodes in the graph.
+# This 'ignore' behaviour can be overriden by "entrance-whitelist" (below)
+ignore-entrances-types:
+#  - none   # Don't know what this is for
+
+## DUNGEONS
+#  - dungeon
+#  - dungeon-minor
+#  - dungeon-ganon
+#  - dungeon-ganon-tower  # Ganon's Castle Interior <> Ganon's Tower
+#  - dungeon-exit
+#  - dungeon-acoi
+#  - dungeon-btw
+#  - dungeon-ctr
+#  - dungeon-sh
+#  - dungeon-ss
+#  - dungeon-pf
+
+  - boss
+
+#  - overworld-pf # not sure how to classify this
+
+## GROTTOS
+  - grotto
+  - grave
+  - grotto-exit
+  - grave-exit
+
+## INTERIORS
+#  - indoors-pf
+  - indoors-telescope
+  - indoors-special
+  - indoors-link
+  - indoors
+  - indoors-extra
+  - indoors-exit
+  
+## ONE WAYS (except overworld one-ways and Kaepora Gaebora warps)
+#  - one-way-woods
+#  - one-way-ikana
+  - one-way-water-void
+  - wallmaster
+  
+## WARP SONGS
+  - one-way-statue  # owl statues
+  - one-way-song
+
+## SPAWN POINTS ( 
+  - spawn-child
+  - spawn-adult
+
+## MAJOR
+# Uncommenting the below can causes major areas to be grouped together, making the graph hard to understand
+#  - region
+#  - region-extra
+#  - region-shortcut  # e.g. lost woods <> zora's river
+#  - region-exit
+#  - overworld
+#  - one-way
+#  - one-way-owl # OOT - Kaepora Gaebora warps!
+
+#############################################################################################################
+
+# List of entrances to render even if they are set to be ignored by ignore-entrance-types
+# Usually these come in pairs
+entrance-whitelist:
+  - OOT_TEMPLE_OF_TIME
+  - OOT_TEMPLE_OF_TIME_ENTRYWAY_FROM_TEMPLE
+  
+# Stops Kakariko Village and Graveyard from merging because of Dampe's Grave
+  - OOT_WINDMILL
+  - OOT_KAKARIKO_FROM_WINDMILL
+  - OOT_GRAVE_DAMPE
+  - OOT_GRAVE_EXIT_DAMPE
+  
+# Stops termina field and clock town merging because of the Bomber's Passage interior.
+  - MM_ASTRAL_OBSERVATORY_FROM_CLOCK_TOWN_EAST
+  - MM_CLOCK_TOWN_EAST_FROM_ASTRAL_OBSERVATORY
+  - MM_ASTRAL_OBSERVATORY_FROM_FIELD
+  - MM_FIELD_FROM_ASTRAL_OBSERVATORY
+
+###############################
+######## RENDERING ############
+###############################
+
+#set to 'normal' or '3d'
+# 3d is a 3d mode!
+render-mode: normal
+
+# DOCS: https://robert-haas.github.io/gravis-docs/rst/api/vis.html
+render-mode-normal-settings:
+#  data: 
+  graph_height: 850
+#  details_height: 
+  show_details: true
+#  show_details_toggle_button: 
+  show_menu: true
+#  show_menu_toggle_button: 
+#  show_node: 
+  node_size_factor: 2 
+#  node_size_data_source: 
+#  use_node_size_normalization: 
+#  node_size_normalization_min: 
+#  node_size_normalization_max: 
+#  node_drag_fix: 
+  node_hover_neighborhood: true
+  node_hover_tooltip: true
+#  show_node_image: 
+#  node_image_size_factor: 
+#  show_node_label: 
+#  show_node_label_border: 
+  node_label_data_source: label
+#  node_label_size_factor: 
+#  node_label_rotation: 
+#  node_label_font: 
+#  show_edge: 
+#  edge_size_factor: 
+#  edge_size_data_source: 
+  use_edge_size_normalization: false
+#  edge_size_normalization_min: 
+#  edge_size_normalization_max: 
+#  edge_curvature: 
+  edge_hover_tooltip: true
+  show_edge_label: false
+#  show_edge_label_border: 
+  edge_label_data_source: label
+#  edge_label_size_factor: 
+#  edge_label_rotation: 
+#  edge_label_font: 
+#  zoom_factor: 
+#  large_graph_threshold: 
+#  layout_algorithm_active: 
+#  layout_algorithm: 
+#  gravitational_constant:
+  central_gravity: 0.69 # reduce this if your graphs are too cramped, but as with many other settings, this is one you can change with the menu after rendering.
+#  spring_length: 
+#  spring_constant: 
+#  avoid_overlap: 
+
+
+# DOCS: https://robert-haas.github.io/gravis-docs/rst/api/three.html
+render-mode-3d-settings:
+#  data: 
+  graph_height: 850
+#  details_height: 
+  show_details: true
+#  show_details_toggle_button: 
+  show_menu: true
+#  show_menu_toggle_button: 
+#  show_node: 
+  node_size_factor: 2
+#  node_size_data_source: 
+#  use_node_size_normalization: 
+#  node_size_normalization_min: 
+#  node_size_normalization_max: 
+#  node_drag_fix: 
+  node_hover_neighborhood: true
+  node_hover_tooltip: true
+#  show_node_image: 
+#  node_image_size_factor: 
+#  show_node_label: 
+#  show_node_label_border: 
+  node_label_data_source: label
+#  node_label_size_factor: 
+#  node_label_rotation: 
+#  node_label_font: 
+#  show_edge: 
+#  edge_size_factor: 
+#  edge_size_data_source: 
+  use_edge_size_normalization: false
+#  edge_size_normalization_min: 
+#  edge_size_normalization_max: 
+#  edge_curvature: 
+  edge_hover_tooltip: true
+  show_edge_label: false
+#  show_edge_label_border: 
+  edge_label_data_source: label
+#  edge_label_size_factor: 
+#  edge_label_rotation: 
+#  edge_label_font: 
+#  zoom_factor: 
+#  large_graph_threshold: 
+#  layout_algorithm_active: 
+#  use_many_body_force: 
+#  many_body_force_strength: 
+#  many_body_force_theta: 
+#  use_many_body_force_min_distance: 
+#  many_body_force_min_distance: 
+#  use_many_body_force_max_distance: 
+#  many_body_force_max_distance: 
+#  use_links_force: 
+#  links_force_distance: 
+#  links_force_strength: 
+#  use_collision_force: 
+#  collision_force_radius: 
+#  collision_force_strength: 
+#  use_x_positioning_force: 
+#  x_positioning_force_strength: 
+#  use_y_positioning_force: 
+#  y_positioning_force_strength: 
+#  use_z_positioning_force: 
+#  z_positioning_force_strength: 
+#  use_centering_force: 

@@ -1,0 +1,6 @@
+#gravis needs an old version of setup tools but tries to install the latest
+setuptools<82
+
+gravis
+PyYAML
+
