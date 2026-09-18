@@ -56,14 +56,14 @@ Windows: `.\venv\Scripts\activate`
 
 You will need to ensure the virtual environment is active (see step 5) every time you run the script.
 
+(since the project folder is much more busy than in the standalone executable installation, you may wish to use the `./user/` folder to store your custom configs and spoiler logs. This is the sole puporse of this folder)
+
 # Usage
 The script is executed at the command line.
 
 When the script is successfully executed, **your web browser should automatically load a new tab with the graph**.
 
 It is **highly recommended** that you edit your config file to un-ignore entrance types that you have shuffled. Otherwise, details about your world will not be shown.
-
-The "./user/" folder is provided as a way for you to store files, including spoiler logs and config files. You may store these files anywhere you like, including in the project's root directory or elsewhere on the system; the user folder is provided solely as a convenience.
 
 ## Generate graph using config.yml
 ```.\ootmm-er-plotter.exe .\my-spoiler-log.txt```

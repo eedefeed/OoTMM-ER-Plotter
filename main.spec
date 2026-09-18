@@ -57,11 +57,6 @@ exe = EXE(
 project_dir = Path(SPECPATH)
 dist_dir = project_dir / 'dist'
 
-# Ensure ./dist/user/ folder exists
-print("[OoTMM ER Plotter] Custom main.spec action: ensuring './dist/user/' folder exists")
-user_dir = dist_dir / "user"
-user_dir.mkdir(parents=False, exist_ok=True)
-
 # Copy "ootmm" folder to be immediately accessible by the .exe
 print("[OoTMM ER Plotter] Custom main.spec action: copying './ootmm/' folder to './dist/ootmm")
 shutil.copytree(project_dir / 'ootmm', dist_dir / 'ootmm', dirs_exist_ok=True)
