@@ -71,6 +71,7 @@ MARKER_ENTRANCE = '&#x1F87A' # unicode: WIDE-HEADED RIGHTWARDS HEAVY BARB ARROW
 #################################################################################################################
 
 # Renders a gjgf as a (network) graph. use make_gjgf() to make the gjgf
+# It loads it to a browser and returns a second stanalone HTML version.
 # gjgf spec: https://robert-haas.github.io/gravis-docs/rst/format_specification.html
 def render (gjgf, config):
     renderMode = config["render-mode"]
@@ -79,6 +80,7 @@ def render (gjgf, config):
 
     fig = renderFunc(gjgf, **renderFuncSettings)
     fig.display()
+    return fig.to_html_standalone()
 
 # PARAM: {dict} node_info - matches the output of generate_node_info() in application.py
 # PARAM: {DisjointSet} disjoint_set - defined in world_parser.py

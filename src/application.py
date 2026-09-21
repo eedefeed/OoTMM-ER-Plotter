@@ -65,7 +65,7 @@ def run(config, entrances, spoiler, world):
     
     # Render the world, using our ER-adjusted incisions to stitch the world back together
     gjgf = render.make_gjgf(node_info, disjoint_set_world, incisions)
-    render.render(gjgf, config)
+    return render.render(gjgf, config)
 
 # Consolidates and generates information for each node
 def generate_node_info(disjoint_set_world, entrances, config):
@@ -172,7 +172,7 @@ def determine_node_name(node_areas, entrances):
     global NO_NAME_COUNT
     NO_NAME_COUNT += 1
     fallback_name = "NO NAME " + str(NO_NAME_COUNT)
-    print("[ER_PLOTTER]: unable to name a node. Assigned a fallback name: " + fallback_name + " ; areas: " + str(node_areas))
+    #print("[OoTMM ER Plotter] Struggled to name a node. It was assigned a fallback name: " + fallback_name + " ; areas: " + str(node_areas))
     return fallback_name
 
 # entrances matches the format of entrances.yml    

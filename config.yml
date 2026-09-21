@@ -28,7 +28,7 @@ ignore-entrances-types:
 #  - dungeon-ss
 #  - dungeon-pf
 
-  - boss
+#  - boss
 
 #  - overworld-pf # not sure how to classify this
 

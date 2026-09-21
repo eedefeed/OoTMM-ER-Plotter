@@ -19,10 +19,10 @@ The script works by collecting data from:
 
 # Installation
 
-There are two ways to install this project
+There are three ways to install this project
 
-1. Easy way: run this project using the executable
-2. Hard way: run the project using python.
+1. Easy way: run the executable at the command line.
+2. Hard way: run the project at the command line using python.
 3. Very hard way: build it yourself and use the executable. See [BUILD.MD](BUILD.md)
 
 ## Executable Installation
@@ -61,14 +61,16 @@ You will need to ensure the virtual environment is active (see step 5) every tim
 # Usage
 The script is executed at the command line.
 
-When the script is successfully executed, **your web browser should automatically load a new tab with the graph**.
+When the script is successfully executed, **your web browser should automatically load a new tab with the graph**. In addition, the graph will be saved as a .htm file. By default, this fild is called `ootmm_er_plotter_graph.htm` and will be located in the same folder as the executable.
 
 It is **highly recommended** that you edit your config file to un-ignore entrance types that you have shuffled. Otherwise, details about your world will not be shown.
 
-## Generate graph using config.yml
+## Generate a graph
 ```.\ootmm-er-plotter.exe .\my-spoiler-log.txt```
 
-The location of the spoiler log is required.
+This generates a graph for the spoiler log `.\my-spoiler-log.txt`. Relative URIs will be parsed relative to your current directory.
+
+This example command doesn't specify a config. As a result, the config at `./config.yml` (relative to the executable) will be used
 
 ## CLI help
 ```.\ootmm-er-plotter.exe -h```
@@ -89,6 +91,22 @@ There are a lot of configuration options for how the graph is displayed. The 2D 
 To load a config file that is not in the default location, use the `-c` (or `--config`) flag, followed by a reference to the file, for example:
 
 ```.\ootmm-er-plotter.exe .\my-spoiler.txt -c .\my-custom-config.yml```
+
+Relative URIs will be parsed relative to your current directory.
+
+## File output
+When executed, the program attempts to load the graph in your browser. As a safeguard against the possibility that this load-to-browser doesn't work, the program also saves the graph to a file. By default, this files is saved to `ootmm_er_plotter_graph.htm` in the same folder as the executable. This default can be changed with `-f` or `--file`.
+
+```.\ootmm-er-plotter.exe .\my-spoiler.txt -f .\my-custom-output-file.htm```
+
+Relative URIs will be parsed relative to your current directory.
+
+## Debug mode
+By default, some error tracebacks are hidden, since they can bury useful error messages in a wall of text.
+
+To show all error tracebacks, use `-d` or `--debug`, for example:
+
+```.\ootmm-er-plotter.exe .\my-spoiler.txt -d```
 
 ## Using Graphs
 The right-hand panel has a lot of options for sorting out the graph. The following options are especially useful:
